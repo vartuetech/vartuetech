@@ -13,7 +13,7 @@ const people = [
   {
     name: "Gourav Rawat",
     role: "Chief Executive Officer (CEO) / Co-Founder",
-    imageUrl: "./avatar.png",
+    imageUrl: "./gourav.png",
   },
   {
     name: "Vijay Jangra",
