@@ -1,4 +1,4 @@
-export default function services() {
+export default function Services() {
   const features = [
     {
       icon: (
@@ -17,8 +17,8 @@ export default function services() {
           />
         </svg>
       ),
-      title: "Fast Refresh",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+      title: "Web Development",
+      desc: "Our talented team of web developers crafts visually appealing and highly functional websites tailored to your specific requirements. Whether you need a simple business website, an e-commerce platform, or a complex web application, we leverage the latest technologies and industry best practices to deliver outstanding results.",
     },
     {
       icon: (
@@ -37,8 +37,8 @@ export default function services() {
           />
         </svg>
       ),
-      title: "Analytics",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+      title: "UI/UX Design",
+      desc: "Deliver exceptional user experiences with our UI/UX design services. Our skilled designers blend creativity and usability to create visually stunning interfaces that captivate users and enhance their interaction with your digital products. We focus on user-centric design principles to make your applications intuitive, engaging, and conversion-oriented.",
     },
     {
       icon: (
@@ -57,8 +57,8 @@ export default function services() {
           />
         </svg>
       ),
-      title: "Datacenter security",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+      title: "Mobile App Development",
+      desc: "Stay ahead in the mobile-first era with our top-notch mobile app development services. We specialize in creating user-friendly, feature-rich applications for iOS and Android platforms. From concept to deployment, we ensure a seamless development process to bring your app ideas to life and engage your target audience.",
     },
     {
       icon: (
@@ -77,8 +77,8 @@ export default function services() {
           />
         </svg>
       ),
-      title: "Build on your terms",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+      title: "Cloud Solutions",
+      desc: "Unlock the power of the cloud with our cloud solutions tailored to your business needs. We provide cloud migration, infrastructure setup, and ongoing management services to help you leverage the scalability, flexibility, and security of cloud computing. From optimizing workflows to enhancing data storage and accessibility, our experts ensure seamless cloud integration.",
     },
     {
       icon: (
@@ -97,8 +97,8 @@ export default function services() {
           />
         </svg>
       ),
-      title: "Safe to use",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+      title: "Software Consulting",
+      desc: "Our experienced software consultants are ready to guide you through the intricacies of technology and help you make informed decisions. We offer strategic advice, feasibility assessments, technology audits, and roadmapping to align your software initiatives with your business goals. With our insights, you can optimize your software development processes and maximize your ROI.",
     },
     {
       icon: (
@@ -117,21 +117,20 @@ export default function services() {
           />
         </svg>
       ),
-      title: "Flexible",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+      title: "E-commerce Solutions",
+      desc: "Enable seamless online selling experiences with our e-commerce solutions. We build secure, scalable, and user-friendly e-commerce platforms that empower businesses to sell products and services globally. From customizing your online store to integrating payment gateways and optimizing conversions, we ensure a robust and streamlined e-commerce presence.",
     },
   ];
 
   return (
-    <section className="py-14">
+    <section className="py-14 my-[6rem]">
       <div className="max-w-screen-xl mx-auto px-4 text-center text-gray-600 md:px-8">
         <div className="max-w-2xl mx-auto">
-          <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-            The fastest way to launch a product
+          <h3 className="text-[#FBB040] text-2xl font-semibold sm:text-3xl">
+          Empowering Your Business with Our Exceptional Services
           </h3>
           <p className="mt-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            congue, nisl eget molestie varius, enim ex faucibus purus.
+          At Vartuetech, we offer a wide range of services designed to meet the unique needs of our clients. With our expertise in technology and deep understanding of various industries, we strive to deliver innovative solutions that drive growth and success. Explore our comprehensive services below:
           </p>
         </div>
         <div className="mt-12">
