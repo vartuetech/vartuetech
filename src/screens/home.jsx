@@ -1,25 +1,41 @@
 import { Link } from "react-router-dom";
 import ContactUs from "./contact";
+import { useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase.config";
+import {
+  BookOpenIcon,
+  PlusIcon,
+  ShoppingCartIcon,
+  HeartIcon,
+  CurrencyRupeeIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/react/24/solid";
 
 const people = [
   {
     name: "Gourav Rawat",
     role: "Chief Executive Officer (CEO) / Co-Founder",
-    imageUrl: "./gourav.png",
+    imageUrl: "./avatar.png",
   },
   {
-    name: "Vijay Jangra",
+    name: "Kuldeep",
+    role: "Chief Technology Officer (CTO) / Co-Founder",
+    imageUrl: "./avatar.png",
+  },
+  {
+    name: "Vijay",
+    role: "Chief Product Officer (CPO) / Co-founder",
+    imageUrl: "./avatar.png",
+  },
+  {
+    name: "Charan",
     role: "Chief Financial Officer (CFO) / Co-founder",
     imageUrl: "./avatar.png",
   },
   {
-    name: "Charan Singh",
-    role: "Chief Technology Officer (CTO) / Co-founder",
-    imageUrl: "./avatar.png",
-  },
-  {
-    name: "Jatin Suryansh",
-    role: "Chief Product Officer (CPO) / Co-founder",
+    name: "Jatin",
+    role: "Chief Marketing Officer (CMO) / Co-founder",
     imageUrl: "./avatar.png",
   },
   // More people...
@@ -39,33 +55,37 @@ const features = [
   {
     icon: "./img/soft_dev.jpg",
     title: "Software Development",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+    desc: " We offer strategic advice, feasibility assessments, technology audits, and roadmapping to align your software.",
   },
 ];
 
 const work_for = [
   {
-    icon: "./img/education.jpg",
+    // icon: "./img/education.jpg",
+    icon: (
+      <BookOpenIcon className="h-20 w-20" aria-hidden="true" />
+    ),
     title: "EDUCATION",
   },
   {
-    icon: "./img/healthcare.jpg",
+    // icon: "./img/healthcare.jpg",
+    icon: <HeartIcon className="h-20 w-20 fill-red-500" aria-hidden="true" />,
     title: "HEALTHCARE",
   },
   {
-    icon: "./img/ecommerce.jpg",
+    icon: <ShoppingCartIcon className="h-20 w-20 fill-blue-600" aria-hidden="true" />,
     title: "E-COMMERCE",
   },
   {
-    icon: "./img/finance.jpg",
+    icon: <CurrencyRupeeIcon className="h-20 w-20 fill-green-600" aria-hidden="true" />,
     title: "FINANCE & BANKING",
   },
   {
-    icon: "./img/travel.jpg",
+    icon: <PaperAirplaneIcon className="h-20 w-20 fill-amber-600" aria-hidden="true" />,
     title: "TRAVEL & HOSPITALITY",
   },
   {
-    icon: "./img/many.jpg",
+    icon: <PlusIcon className="h-20 w-20" aria-hidden="true" />,
     title: "& MANY MORE...",
   },
 ];
@@ -76,19 +96,19 @@ const footerNavs = [
     items: [
       {
         href: "javascript:void()",
+        name: "Team",
+      },
+      {
+        href: "contact",
+        name: "Careers",
+      },
+      {
+        href: "javascript:void()",
         name: "Partners",
       },
       {
         href: "javascript:void()",
         name: "Blog",
-      },
-      {
-        href: "javascript:void()",
-        name: "Team",
-      },
-      {
-        href: "javascript:void()",
-        name: "Careers",
       },
     ],
   },
@@ -97,18 +117,18 @@ const footerNavs = [
     items: [
       {
         href: "contact",
-        name: "contact",
+        name: "Contact",
       },
       {
         href: "contact",
         name: "Support",
       },
       {
-        href: "javascript:void()",
+        href: "terms",
         name: "Docs",
       },
       {
-        href: "javascript:void()",
+        href: "contact",
         name: "Pricing",
       },
     ],
@@ -121,7 +141,7 @@ const footerNavs = [
         name: "Terms",
       },
       {
-        href: "javascript:void()",
+        href: "terms",
         name: "License",
       },
       {
@@ -136,13 +156,23 @@ const footerNavs = [
   },
 ];
 
-
 export default function Home() {
+  const [id, setId] = useState("");
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (id !== "") {
+      await addDoc(collection(db, "subscribe"), {
+        email: id,
+        createdAt: serverTimestamp(),
+      });
+      alert("Successfully Subscribed");
+      setId("");
+    }
+  };
 
   return (
     <div className="">
-     
-
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -159,7 +189,7 @@ export default function Home() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-54">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              What You Think We Can Create
+              You Think, We Create
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Beautifully designed, expertly crafted Web Application and
@@ -196,8 +226,9 @@ export default function Home() {
               We Serve You the Best
             </h3>
             <p className="mt-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              congue, nisl eget molestie varius, enim ex faucibus purus.
+              Our team of highly skilled professionals is committed to
+              delivering cutting-edge solutions tailored to meet your unique
+              business needs.
             </p>
           </div>
           <div className="mt-12">
@@ -232,7 +263,8 @@ export default function Home() {
                 world of technology. Our team consists of dedicated individuals
                 who bring a wealth of knowledge, expertise, and passion to their
                 respective roles. Get to know the remarkable leaders who shape
-                our company&apos;s vision and guide us towards innovation and growth.
+                our company&apos;s vision and guide us towards innovation and
+                growth.
               </p>
             </div>
             <ul
@@ -243,7 +275,7 @@ export default function Home() {
                 <li key={person.name}>
                   <div className="flex items-center gap-x-6">
                     <img
-                      className="h-40 w-40 rounded-full"
+                      className="h-24 w-24 rounded-full"
                       src={person.imageUrl}
                       alt=""
                     />
@@ -277,10 +309,13 @@ export default function Home() {
                   key={idx}
                   className="space-y-3 rounded-2xl shadow-2xl py-8 transition transform ease-in-out duration-300 hover:scale-110"
                 >
-                  <img
+                  {/* <img
                     className="w-20 h-20 mx-auto rounded-full flex items-center justify-center"
                     src={item.icon}
-                  ></img>
+                  ></img> */}
+                  <div className="mx-auto rounded-full flex items-center justify-center">
+                    {item.icon}
+                  </div>
                   <h4 className="text-md text-gray-800 font-semibold">
                     {item.title}
                   </h4>
@@ -848,27 +883,36 @@ export default function Home() {
           </div>
         </div>
       </section>
-<section>
-  <ContactUs />
-</section>
+
+      <section>
+        <ContactUs />
+      </section>
+
       <footer className="text-gray-500 bg-white px-4 py-5 max-w-screen-xl mx-auto md:px-8 mt-8">
         <div className="gap-6 justify-between md:flex">
           <div className="flex-1">
             <div className="max-w-xs">
               <img src="./name_logo.png" className="w-60" />
               <p className="leading-relaxed mt-2 text-[15px]">
-                Vartuetech.
+                Vartuetech. Pvt. Ltd.
               </p>
             </div>
-            <form onSubmit={(e) => e.preventDefault()}>
+            <form onSubmit={handleSubscribe}>
               <label className="block pt-4 pb-2">Stay up to date</label>
               <div className="max-w-sm flex items-center border rounded-md p-1">
                 <input
+                  value={id}
+                  onChange={(e) => setId(e.target.value.trim())}
+                  id="email"
                   type="email"
                   placeholder="Enter your email"
                   className="w-full p-2.5 outline-none bg-white"
+                  required
                 />
-                <button className="p-2.5 rounded-md text-white bg-indigo-600 outline-none shadow-md focus:shadow-none sm:px-5">
+                <button
+                  type="submit"
+                  className="p-2.5 rounded-md text-white bg-indigo-600 outline-none shadow-md focus:shadow-none sm:px-5"
+                >
                   Subscribe
                 </button>
               </div>

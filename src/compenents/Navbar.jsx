@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from 'react-router-dom';
@@ -13,8 +13,8 @@ const navigation = [
 const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    return (       
-    <header className="absolute inset-x-0 top-0 z-50">
+    return (
+      <header className="absolute inset-x-0 top-0 z-50">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
@@ -46,10 +46,10 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
             <Link
               to="/contact"
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="transition duration-400 ease-in-out bg-blue-600 transform hover:bg-yellow-400 hover:text-black px-8 py-2 text-white bg-indigo-600 rounded-full duration-150 hover:bg-indigo-500"
             >
               GET SUPPORT <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -64,7 +64,11 @@ const Navbar = () => {
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <Link to="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                to="/"
+                className="-m-1.5 p-1.5"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 <span className="sr-only">VartueTech</span>
                 <img className="h-8 w-auto" src="./name_logo.png" alt="" />
               </Link>
@@ -93,9 +97,9 @@ const Navbar = () => {
                 </div>
                 <div className="py-6">
                   <Link
-                    to="/"
+                    to="/contact"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="px-4 py-2 text-white bg-indigo-600 rounded-full duration-150 hover:bg-indigo-500 active:bg-indigo-700"
                   >
                     GET SUPPORT
                   </Link>
@@ -105,7 +109,6 @@ const Navbar = () => {
           </Dialog.Panel>
         </Dialog>
       </header>
-      
     );
 };
 
