@@ -19,22 +19,22 @@ const people = [
     imageUrl: "./avatar.png",
   },
   {
-    name: "Kuldeep",
+    name: "Kuldeep Rawat",
     role: "Chief Technology Officer (CTO) / Co-Founder",
     imageUrl: "./avatar.png",
   },
   {
-    name: "Vijay",
+    name: "Vijay Jangra",
     role: "Chief Product Officer (CPO) / Co-founder",
     imageUrl: "./avatar.png",
   },
   {
-    name: "Charan",
+    name: "Charan Singh",
     role: "Chief Financial Officer (CFO) / Co-founder",
     imageUrl: "./avatar.png",
   },
   {
-    name: "Jatin",
+    name: "Jatin Suryansh",
     role: "Chief Marketing Officer (CMO) / Co-founder",
     imageUrl: "./avatar.png",
   },
