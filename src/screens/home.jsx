@@ -15,27 +15,27 @@ import {
 const people = [
   {
     name: "Gourav Rawat",
-    role: "Chief Executive Officer (CEO) / Co-Founder",
+    role: "Frontend Developer / Co-Founder",
     imageUrl: "./avatar.png",
   },
   {
     name: "Kuldeep Rawat",
-    role: "Chief Technology Officer (CTO) / Co-Founder",
+    role: "DevOps Engineer / Co-Founder",
     imageUrl: "./avatar.png",
   },
   {
     name: "Vijay Jangra",
-    role: "Chief Product Officer (CPO) / Co-founder",
+    role: "Backend Developer / Co-founder (Team Lead)",
     imageUrl: "./avatar.png",
   },
   {
     name: "Charan Singh",
-    role: "Chief Financial Officer (CFO) / Co-founder",
+    role: "Frontend Developer / Co-founder",
     imageUrl: "./avatar.png",
   },
   {
     name: "Jatin Suryansh",
-    role: "Chief Marketing Officer (CMO) / Co-founder",
+    role: "UI/UX Designer / Co-founder",
     imageUrl: "./avatar.png",
   },
   // More people...
