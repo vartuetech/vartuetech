@@ -15,29 +15,14 @@ import {
 const people = [
   {
     name: "Gourav Rawat",
-    role: "Frontend Developer / Co-Founder",
-    imageUrl: "./avatar.png",
-  },
-  {
-    name: "Kuldeep Rawat",
-    role: "DevOps Engineer / Co-Founder",
+    role: "Co-Founder",
     imageUrl: "./avatar.png",
   },
   {
     name: "Vijay Jangra",
-    role: "Backend Developer / Co-founder (Team Lead)",
+    role: "Co-founder (Team Lead)",
     imageUrl: "./avatar.png",
-  },
-  {
-    name: "Charan Singh",
-    role: "Frontend Developer / Co-founder",
-    imageUrl: "./avatar.png",
-  },
-  {
-    name: "Jatin Suryansh",
-    role: "UI/UX Designer / Co-founder",
-    imageUrl: "./avatar.png",
-  },
+  }
   // More people...
 ];
 
