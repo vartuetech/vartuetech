@@ -14,13 +14,18 @@ import {
 
 const people = [
   {
-    name: "Gourav Rawat",
-    role: "Co-Founder",
+    name: "Kuldeep Rawat",
+    role: "Founder | CEO",
     imageUrl: "./avatar.png",
   },
   {
     name: "Vijay Jangra",
-    role: "Co-founder (Team Lead)",
+    role: "Founder | COO (Team Lead)",
+    imageUrl: "./avatar.png",
+  },
+  {
+    name: "Gourav Rawat",
+    role: "Founder | CTO",
     imageUrl: "./avatar.png",
   }
   // More people...
