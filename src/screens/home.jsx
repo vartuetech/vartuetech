@@ -23,11 +23,7 @@ const people = [
     role: "Founder | COO (Team Lead)",
     imageUrl: "./avatar.png",
   },
-  {
-    name: "Gourav Rawat",
-    role: "Founder | CTO",
-    imageUrl: "./avatar.png",
-  }
+  
   // More people...
 ];
 
